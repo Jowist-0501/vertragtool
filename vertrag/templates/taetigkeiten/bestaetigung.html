@@ -1,0 +1,7 @@
+<h1>Tätigkeit löschen</h1>
+<p>Möchtest du „{{ taetigkeit.bezeichnung }}“ wirklich löschen?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Ja, löschen</button>
+    <a href="{% url 'taetigkeiten_liste' %}">Abbrechen</a>
+</form>

@@ -1,0 +1,11 @@
+<h1>Tätigkeiten</h1>
+<a href="{% url 'taetigkeiten_erstellen' %}">➕ Neue Tätigkeit</a>
+<ul>
+    {% for t in taetigkeiten %}
+        <li>
+        {{ t.bezeichnung }}
+        <a href="{% url 'taetigkeiten_bearbeiten' t.pk %}">Bearbeiten</a>
+        <a href="{% url 'taetigkeiten_loeschen' t.pk %}">Löschen</a>
+        </li>
+    {% endfor %}
+</ul>

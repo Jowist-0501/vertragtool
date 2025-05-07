@@ -1,0 +1,11 @@
+<h1>Firmen</h1>
+<a href="{% url 'firmen_erstellen' %}">➕ Neue Firma</a>
+<ul>
+    {% for t in firmen %}
+        <li>
+        {{ t.firma }}
+        <a href="{% url 'firmen_bearbeiten' t.pk %}">Bearbeiten</a>
+        <a href="{% url 'firmen_loeschen' t.pk %}">Löschen</a>
+        </li>
+    {% endfor %}
+</ul>
