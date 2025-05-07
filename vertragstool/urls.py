@@ -21,14 +21,27 @@ from vertrag import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    # Tätigkeiten
-    path('taetigkeiten/', views.taetigkeiten_liste, name='taetigkeiten_liste'),
-    path('taetigkeiten/neu/', views.taetigkeiten_erstellen, name='taetigkeiten_erstellen'),
-    path('taetigkeiten/<int:pk>/bearbeiten/', views.taetigkeiten_bearbeiten, name='taetigkeiten_bearbeiten'),
-    path('taetigkeiten/<int:pk>/loeschen/', views.taetigkeiten_loeschen, name='taetigkeiten_loeschen'),
     #Firmen
     path('firmen/', views.firmen_liste, name='firmen_liste'),
     path('firmen/neu/', views.firmen_erstellen, name='firmen_erstellen'),
     path('firmen/<int:pk>/bearbeiten/', views.firmen_bearbeiten, name='firmen_bearbeiten'),
     path('firmen/<int:pk>/loeschen/', views.firmen_loeschen, name='firmen_loeschen'),
+    # Standorte
+
+    # Tätigkeiten
+    path('taetigkeiten/', views.taetigkeiten_liste, name='taetigkeiten_liste'),
+    path('taetigkeiten/neu/', views.taetigkeiten_erstellen, name='taetigkeiten_erstellen'),
+    path('taetigkeiten/<int:pk>/bearbeiten/', views.taetigkeiten_bearbeiten, name='taetigkeiten_bearbeiten'),
+    path('taetigkeiten/<int:pk>/loeschen/', views.taetigkeiten_loeschen, name='taetigkeiten_loeschen'),
+
+    # Einsatzort
+
+    # Vertragsarten
+
+    # Lohnarten
+
+    # Verträge
+    path('vertraege/', views.vertraege_liste, name='vertra'),
+    path('vertrag/neu/', views.vertrag_erstellen, name='vertrag_erstellen'),
+
 ]

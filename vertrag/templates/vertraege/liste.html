@@ -1,0 +1,10 @@
+<h1>Tätigkeiten</h1>
+<a href="{% url 'vertrag_erstellen' %}">➕ Neue Tätigkeit</a>
+<ul>
+    {% for t in vertraege %}
+        <li>
+        {{ t.name }}
+
+        </li>
+    {% endfor %}
+</ul>

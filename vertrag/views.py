@@ -20,7 +20,7 @@ def firmen_erstellen(request):
     else:
         form = FirmaForm()
         return render(request, 'firmen/formular.html', {'form': form})
-    
+
 # Firma bearbeiten
 def firmen_bearbeiten(request, pk):
     firma = get_object_or_404(Firma, pk=pk)
@@ -74,6 +74,11 @@ def taetigkeiten_loeschen(request, pk):
     return render(request, 'taetigkeiten/bestaetigung.html', {'taetigkeiten': taetigkeiten})
 #endregion Tätigkeiten
 
+#region Verträge
+def vertraege_liste(request):
+    vertraege = Firma.objects.all()
+    return render(request, 'vertraege/liste.html', {'vertraege': vertraege})
+
 def vertrag_erstellen(request):
     if request.method == 'POST':
         form = VertragForm(request.POST)
@@ -84,4 +89,5 @@ def vertrag_erstellen(request):
     else:
         form = VertragForm()
 
-    return render(request, 'vertrag_erstellen.html', {'form': form})
+    return render(request, 'vertraege/vertrag_erstellen.html', {'form': form})
+#endregion Verträge
